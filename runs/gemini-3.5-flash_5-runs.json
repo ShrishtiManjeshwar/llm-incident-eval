@@ -1,0 +1,133 @@
+{
+  "summary": {
+    "incident": "translation_fallback_01",
+    "model": "gemini-3.5-flash",
+    "runs": 5,
+    "passed": 5,
+    "failed": 0,
+    "prompt_tokens": 90000,
+    "output_tokens": 1027
+  },
+  "results": [
+    {
+      "run": 1,
+      "model": "gemini-3.5-flash",
+      "prompt_tokens": 18000,
+      "output_tokens": 198,
+      "brief": {
+        "cause": "Release 2026.10.14.2 introduced static locale files missing several translation keys (such as header.title and nav.tooltip.cart), causing non-English storefronts to fall back to English text.",
+        "evidence": [
+          "L061",
+          "L063",
+          "L068",
+          "L072",
+          "L074",
+          "L381",
+          "L385"
+        ],
+        "next_action": "Roll back release 2026.10.14.2 or push a fix containing the missing translation keys to the static locale files.",
+        "detection": "Add a CI build check to validate translation key completeness across all locale files, or create an alert on 'i18n missing key' log warnings."
+      },
+      "check": {
+        "passed": true,
+        "failures": []
+      }
+    },
+    {
+      "run": 2,
+      "model": "gemini-3.5-flash",
+      "prompt_tokens": 18000,
+      "output_tokens": 200,
+      "brief": {
+        "cause": "Release 2026.10.14.2 updated locale translation files with missing i18n keys (e.g., header.title, nav.tooltip.cart), causing non-English storefronts to fall back to en-US UI text.",
+        "evidence": [
+          "L061",
+          "L068",
+          "L072",
+          "L074",
+          "L381",
+          "L385"
+        ],
+        "next_action": "Roll back release 2026.10.14.2 or deploy a patch restoring missing i18n translation keys in the locale JSON files.",
+        "detection": "Add a CI build check to validate that all i18n keys present in en-US exist in all non-English locale files before deployment."
+      },
+      "check": {
+        "passed": true,
+        "failures": []
+      }
+    },
+    {
+      "run": 3,
+      "model": "gemini-3.5-flash",
+      "prompt_tokens": 18000,
+      "output_tokens": 229,
+      "brief": {
+        "cause": "Deployment release 2026.10.14.2 introduced frontend code requiring new i18n translation keys (such as header.title and nav.tooltip.cart) that were missing from non-English locale files, causing non-English users to see English fallback text.",
+        "evidence": [
+          "L061",
+          "L064",
+          "L065",
+          "L068",
+          "L072",
+          "L074",
+          "L381",
+          "L385"
+        ],
+        "next_action": "Roll back release 2026.10.14.2 or deploy a hotfix adding the missing keys to the non-English locale files under /static/locales/*.",
+        "detection": "Add a CI pipeline check that validates key parity across all locale JSON files before permitting deployment, or create an alert triggering on i18n missing key warning logs."
+      },
+      "check": {
+        "passed": true,
+        "failures": []
+      }
+    },
+    {
+      "run": 4,
+      "model": "gemini-3.5-flash",
+      "prompt_tokens": 18000,
+      "output_tokens": 195,
+      "brief": {
+        "cause": "Deployment release 2026.10.14.2 introduced static locale files with missing translation keys (such as header.title and nav.tooltip.cart), causing non-English pages to fall back to English.",
+        "evidence": [
+          "L061",
+          "L065",
+          "L068",
+          "L072",
+          "L074",
+          "L381",
+          "L385"
+        ],
+        "next_action": "Roll back release 2026.10.14.2 or release a patch adding the missing keys to the non-English locale files.",
+        "detection": "Add an alert on log warnings for missing i18n translation key fallbacks or add CI check validating locale key completeness against fallback dictionaries."
+      },
+      "check": {
+        "passed": true,
+        "failures": []
+      }
+    },
+    {
+      "run": 5,
+      "model": "gemini-3.5-flash",
+      "prompt_tokens": 18000,
+      "output_tokens": 205,
+      "brief": {
+        "cause": "Deployment release 2026.10.14.2 updated static locale files with missing i18n translation keys across non-English locales (de-DE, ja-JP, fr-FR), causing UI text to fall back to English.",
+        "evidence": [
+          "L061",
+          "L065",
+          "L068",
+          "L072",
+          "L074",
+          "L381",
+          "L385"
+        ],
+        "next_action": "Roll back release 2026.10.14.2 or restore the missing translation keys in the static locale files.",
+        "detection": "Implement a CI/CD build step to validate translation key parity across all locale files, or set up an automated alert for spikes in i18n missing key log warnings."
+      },
+      "check": {
+        "passed": true,
+        "failures": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,394 @@
+INCIDENT LOG
+Service: web-frontend (storefront). All times UTC, 2026-10-14.
+Everything below is what the on-call engineer can see. Lines are numbered so a brief can cite them.
+
+L001 2026-10-14T13:30:40Z web            INFO GET /ja/product/884 200 34ms cache=MISS
+L002 2026-10-14T13:31:34Z web            INFO GET /en/search 200 35ms cache=HIT
+L003 2026-10-14T13:32:07Z web            INFO GET /en/product/884 200 81ms cache=MISS
+L004 2026-10-14T13:32:32Z web            INFO GET /de/home 200 43ms cache=HIT
+L005 2026-10-14T13:33:00Z healthcheck    INFO /healthz 200 3ms
+L006 2026-10-14T13:33:32Z web            INFO GET /de/home 200 78ms cache=MISS
+L007 2026-10-14T13:34:06Z web            INFO GET /en/cart 200 65ms cache=HIT
+L008 2026-10-14T13:35:00Z web            INFO GET /en/product/123 200 51ms cache=HIT
+L009 2026-10-14T13:35:20Z web            WARN i18n missing key=footer.legacy_promo locale=en-US fallback=none sampled=1/60s
+L010 2026-10-14T13:35:56Z web            INFO GET /de/product/123 200 40ms cache=HIT
+L011 2026-10-14T13:36:00Z healthcheck    INFO /healthz 200 3ms
+L012 2026-10-14T13:36:20Z web            INFO GET /de/search 200 54ms cache=HIT
+L013 2026-10-14T13:37:14Z web            INFO GET /en/product/123 200 87ms cache=HIT
+L014 2026-10-14T13:38:03Z web            INFO GET /en/cart 200 51ms cache=HIT
+L015 2026-10-14T13:38:38Z web            INFO GET /en/product/123 200 95ms cache=HIT
+L016 2026-10-14T13:39:00Z healthcheck    INFO /healthz 200 3ms
+L017 2026-10-14T13:39:19Z web            INFO GET /fr/product/123 200 37ms cache=HIT
+L018 2026-10-14T13:40:00Z metrics        5xx_rate=0.02% p95_latency_ms=123
+L019 2026-10-14T13:40:05Z web            INFO GET /en/product/123 200 47ms cache=HIT
+L020 2026-10-14T13:40:51Z web            INFO GET /en/account 200 37ms cache=HIT
+L021 2026-10-14T13:41:47Z web            INFO GET /fr/product/123 200 71ms cache=HIT
+L022 2026-10-14T13:42:00Z healthcheck    INFO /healthz 200 3ms
+L023 2026-10-14T13:42:45Z web            INFO GET /en/product/884 200 36ms cache=HIT
+L024 2026-10-14T13:43:22Z web            INFO GET /en/account 200 36ms cache=MISS
+L025 2026-10-14T13:44:26Z web            INFO GET /en/search 200 85ms cache=HIT
+L026 2026-10-14T13:45:00Z healthcheck    INFO /healthz 200 3ms
+L027 2026-10-14T13:45:10Z web            INFO GET /fr/product/123 200 30ms cache=HIT
+L028 2026-10-14T13:45:52Z web            INFO GET /en/home 200 91ms cache=MISS
+L029 2026-10-14T13:47:01Z web            INFO GET /en/account 200 59ms cache=HIT
+L030 2026-10-14T13:47:52Z web            INFO GET /en/product/884 200 79ms cache=HIT
+L031 2026-10-14T13:48:00Z healthcheck    INFO /healthz 200 3ms
+L032 2026-10-14T13:48:20Z web            INFO GET /fr/search 200 63ms cache=HIT
+L033 2026-10-14T13:49:02Z web            INFO GET /de/product/884 200 57ms cache=HIT
+L034 2026-10-14T13:49:33Z web            INFO GET /en/account 200 57ms cache=MISS
+L035 2026-10-14T13:50:00Z metrics        5xx_rate=0.02% p95_latency_ms=124
+L036 2026-10-14T13:50:30Z web            INFO GET /en/product/123 200 28ms cache=HIT
+L037 2026-10-14T13:51:00Z healthcheck    INFO /healthz 200 3ms
+L038 2026-10-14T13:51:24Z web            INFO GET /en/search 200 68ms cache=HIT
+L039 2026-10-14T13:51:58Z web            WARN retrying connection pool=catalog attempt=2
+L040 2026-10-14T13:52:05Z web            WARN i18n missing key=footer.legacy_promo locale=en-US fallback=none sampled=1/60s
+L041 2026-10-14T13:52:28Z web            INFO GET /fr/search 200 34ms cache=HIT
+L042 2026-10-14T13:53:37Z web            INFO GET /ja/account 200 78ms cache=HIT
+L043 2026-10-14T13:54:00Z healthcheck    INFO /healthz 200 3ms
+L044 2026-10-14T13:54:22Z web            INFO GET /en/account 200 79ms cache=MISS
+L045 2026-10-14T13:54:46Z web            INFO GET /ja/product/884 200 48ms cache=HIT
+L046 2026-10-14T13:55:44Z web            INFO GET /en/home 200 47ms cache=HIT
+L047 2026-10-14T13:56:27Z web            INFO GET /de/home 200 54ms cache=HIT
+L048 2026-10-14T13:56:56Z web            INFO GET /de/product/123 200 74ms cache=HIT
+L049 2026-10-14T13:57:00Z healthcheck    INFO /healthz 200 3ms
+L050 2026-10-14T13:57:23Z web            INFO GET /fr/product/884 200 89ms cache=HIT
+L051 2026-10-14T13:57:40Z change-log     CHG-4821 cdn-edge: cache TTL for /static/* changed from 3600s to 86400s (owner=platform)
+L052 2026-10-14T13:57:48Z web            INFO GET /en/account 200 71ms cache=HIT
+L053 2026-10-14T13:58:38Z web            INFO GET /fr/cart 200 94ms cache=MISS
+L054 2026-10-14T13:58:44Z web            WARN slow response path=/api/search ms=766
+L055 2026-10-14T13:59:31Z web            INFO GET /en/account 200 31ms cache=HIT
+L056 2026-10-14T14:00:00Z healthcheck    INFO /healthz 200 3ms
+L057 2026-10-14T14:00:00Z metrics        5xx_rate=0.02% p95_latency_ms=122
+L058 2026-10-14T14:00:10Z web            INFO GET /ja/home 200 61ms cache=HIT
+L059 2026-10-14T14:00:40Z web            INFO GET /en/cart 200 92ms cache=HIT
+L060 2026-10-14T14:01:14Z web            INFO GET /de/cart 200 58ms cache=HIT
+L061 2026-10-14T14:01:55Z deploy-bot     INFO release=2026.10.14.2 service=web-frontend started steps=build,sync-static,invalidate-cache
+L062 2026-10-14T14:02:21Z web            INFO GET /fr/cart 200 94ms cache=HIT
+L063 2026-10-14T14:02:31Z deploy-bot     INFO sync-static completed files=4
+L064 2026-10-14T14:02:44Z deploy-bot     INFO invalidate-cache completed paths=/static/locales/*
+L065 2026-10-14T14:02:45Z deploy-bot     INFO release=2026.10.14.2 status=succeeded
+L066 2026-10-14T14:02:46Z cdn-edge       INFO purge propagated paths=/static/locales/* pops=12
+L067 2026-10-14T14:03:00Z healthcheck    INFO /healthz 200 3ms
+L068 2026-10-14T14:03:20Z web            WARN i18n missing key=header.title locale=de-DE fallback=en-US sampled=1/60s
+L069 2026-10-14T14:03:27Z web            INFO GET /en/home 200 63ms cache=MISS
+L070 2026-10-14T14:03:59Z web            INFO GET /de/product/123 200 85ms cache=HIT
+L071 2026-10-14T14:04:12Z cdn-edge       WARN origin revalidation slow path=/static/locales/de-DE.json ms=410
+L072 2026-10-14T14:04:20Z web            WARN i18n missing key=header.title locale=ja-JP fallback=en-US sampled=1/60s
+L073 2026-10-14T14:05:05Z web            INFO GET /ja/product/123 200 38ms cache=MISS
+L074 2026-10-14T14:05:20Z web            WARN i18n missing key=nav.tooltip.cart locale=fr-FR fallback=en-US sampled=1/60s
+L075 2026-10-14T14:05:39Z web            INFO GET /en/product/123 200 54ms cache=MISS
+L076 2026-10-14T14:06:00Z healthcheck    INFO /healthz 200 3ms
+L077 2026-10-14T14:06:38Z web            INFO GET /fr/product/884 200 72ms cache=HIT
+L078 2026-10-14T14:06:40Z cdn-edge       WARN origin revalidation slow path=/static/locales/fr-FR.json ms=388
+L079 2026-10-14T14:07:03Z web            INFO GET /fr/home 200 77ms cache=HIT
+L080 2026-10-14T14:08:11Z web            INFO GET /en/cart 200 83ms cache=HIT
+L081 2026-10-14T14:08:52Z web            INFO GET /en/account 200 78ms cache=MISS
+L082 2026-10-14T14:09:00Z healthcheck    INFO /healthz 200 3ms
+L083 2026-10-14T14:09:59Z web            INFO GET /ja/account 200 48ms cache=MISS
+L084 2026-10-14T14:10:00Z metrics        5xx_rate=0.02% p95_latency_ms=124
+L085 2026-10-14T14:10:27Z web            INFO GET /en/search 200 87ms cache=HIT
+L086 2026-10-14T14:10:56Z web            INFO GET /de/search 200 88ms cache=HIT
+L087 2026-10-14T14:11:38Z web            INFO GET /en/search 200 44ms cache=MISS
+L088 2026-10-14T14:12:00Z healthcheck    INFO /healthz 200 3ms
+L089 2026-10-14T14:12:44Z web            INFO GET /de/search 200 45ms cache=MISS
+L090 2026-10-14T14:13:16Z web            INFO GET /fr/cart 200 31ms cache=HIT
+L091 2026-10-14T14:13:54Z web            INFO GET /de/search 200 69ms cache=HIT
+L092 2026-10-14T14:14:40Z web            INFO GET /fr/home 200 73ms cache=HIT
+L093 2026-10-14T14:15:00Z healthcheck    INFO /healthz 200 3ms
+L094 2026-10-14T14:15:42Z web            INFO GET /de/search 200 81ms cache=HIT
+L095 2026-10-14T14:16:34Z web            INFO GET /en/cart 200 95ms cache=HIT
+L096 2026-10-14T14:17:22Z web            INFO GET /fr/search 200 28ms cache=HIT
+L097 2026-10-14T14:17:51Z web            INFO GET /en/product/884 200 43ms cache=HIT
+L098 2026-10-14T14:18:00Z healthcheck    INFO /healthz 200 3ms
+L099 2026-10-14T14:18:31Z web            INFO GET /de/search 200 89ms cache=HIT
+L100 2026-10-14T14:18:57Z web            INFO GET /fr/home 200 59ms cache=HIT
+L101 2026-10-14T14:19:19Z web            INFO GET /fr/search 200 85ms cache=HIT
+L102 2026-10-14T14:20:00Z metrics        5xx_rate=0.02% p95_latency_ms=124
+L103 2026-10-14T14:20:27Z web            INFO GET /fr/home 200 84ms cache=HIT
+L104 2026-10-14T14:20:44Z web            WARN i18n missing key=footer.legacy_promo locale=en-US fallback=none sampled=1/60s
+L105 2026-10-14T14:21:00Z healthcheck    INFO /healthz 200 3ms
+L106 2026-10-14T14:21:19Z web            INFO GET /de/cart 200 63ms cache=HIT
+L107 2026-10-14T14:22:13Z web            INFO GET /fr/search 200 59ms cache=HIT
+L108 2026-10-14T14:22:49Z web            INFO GET /ja/cart 200 85ms cache=HIT
+L109 2026-10-14T14:23:16Z web            INFO GET /en/product/123 200 37ms cache=HIT
+L110 2026-10-14T14:24:00Z healthcheck    INFO /healthz 200 3ms
+L111 2026-10-14T14:24:03Z web            INFO GET /en/account 200 66ms cache=HIT
+L112 2026-10-14T14:25:12Z web            INFO GET /en/account 200 74ms cache=HIT
+L113 2026-10-14T14:25:40Z web            INFO GET /ja/cart 200 40ms cache=HIT
+L114 2026-10-14T14:26:31Z web            INFO GET /en/account 200 56ms cache=HIT
+L115 2026-10-14T14:27:00Z healthcheck    INFO /healthz 200 3ms
+L116 2026-10-14T14:27:18Z web            INFO GET /ja/product/884 200 71ms cache=HIT
+L117 2026-10-14T14:28:00Z web            INFO GET /en/account 200 74ms cache=MISS
+L118 2026-10-14T14:28:55Z web            INFO GET /en/account 200 30ms cache=HIT
+L119 2026-10-14T14:29:48Z web            INFO GET /de/search 200 36ms cache=HIT
+L120 2026-10-14T14:30:00Z healthcheck    INFO /healthz 200 3ms
+L121 2026-10-14T14:30:00Z metrics        5xx_rate=0.02% p95_latency_ms=120
+L122 2026-10-14T14:30:58Z web            INFO GET /en/home 200 38ms cache=HIT
+L123 2026-10-14T14:31:20Z web            INFO GET /ja/cart 200 62ms cache=HIT
+L124 2026-10-14T14:32:07Z web            INFO GET /fr/account 200 61ms cache=HIT
+L125 2026-10-14T14:33:00Z healthcheck    INFO /healthz 200 3ms
+L126 2026-10-14T14:33:01Z web            INFO GET /ja/search 200 91ms cache=HIT
+L127 2026-10-14T14:33:26Z web            INFO GET /en/account 200 51ms cache=HIT
+L128 2026-10-14T14:33:50Z web            INFO GET /en/home 200 39ms cache=HIT
+L129 2026-10-14T14:34:15Z web            INFO GET /de/cart 200 36ms cache=HIT
+L130 2026-10-14T14:34:42Z web            INFO GET /en/product/123 200 81ms cache=HIT
+L131 2026-10-14T14:35:19Z web            INFO GET /de/home 200 95ms cache=HIT
+L132 2026-10-14T14:35:46Z web            INFO GET /ja/product/123 200 34ms cache=HIT
+L133 2026-10-14T14:36:00Z healthcheck    INFO /healthz 200 3ms
+L134 2026-10-14T14:36:25Z web            INFO GET /de/search 200 54ms cache=HIT
+L135 2026-10-14T14:37:17Z web            INFO GET /de/product/123 200 72ms cache=HIT
+L136 2026-10-14T14:37:53Z web            INFO GET /en/home 200 92ms cache=HIT
+L137 2026-10-14T14:38:25Z web            INFO GET /de/cart 200 85ms cache=HIT
+L138 2026-10-14T14:39:00Z healthcheck    INFO /healthz 200 3ms
+L139 2026-10-14T14:39:26Z web            INFO GET /en/product/884 200 78ms cache=HIT
+L140 2026-10-14T14:40:00Z metrics        5xx_rate=0.02% p95_latency_ms=123
+L141 2026-10-14T14:40:05Z web            INFO GET /de/cart 200 71ms cache=HIT
+L142 2026-10-14T14:41:10Z web            INFO GET /fr/cart 200 79ms cache=HIT
+L143 2026-10-14T14:41:33Z web            INFO GET /fr/home 200 37ms cache=HIT
+L144 2026-10-14T14:42:00Z healthcheck    INFO /healthz 200 3ms
+L145 2026-10-14T14:42:09Z web            INFO GET /en/home 200 38ms cache=HIT
+L146 2026-10-14T14:42:53Z web            INFO GET /fr/account 200 64ms cache=HIT
+L147 2026-10-14T14:43:57Z web            INFO GET /en/product/884 200 51ms cache=HIT
+L148 2026-10-14T14:44:45Z web            INFO GET /en/product/123 200 70ms cache=HIT
+L149 2026-10-14T14:45:00Z healthcheck    INFO /healthz 200 3ms
+L150 2026-10-14T14:45:40Z web            INFO GET /en/home 200 67ms cache=HIT
+L151 2026-10-14T14:46:11Z web            INFO GET /en/product/884 200 38ms cache=HIT
+L152 2026-10-14T14:47:03Z web            INFO GET /de/cart 200 92ms cache=HIT
+L153 2026-10-14T14:47:28Z web            INFO GET /en/home 200 46ms cache=HIT
+L154 2026-10-14T14:47:50Z web            INFO GET /en/product/123 200 66ms cache=HIT
+L155 2026-10-14T14:48:00Z healthcheck    INFO /healthz 200 3ms
+L156 2026-10-14T14:48:10Z web            WARN i18n missing key=footer.legacy_promo locale=en-US fallback=none sampled=1/60s
+L157 2026-10-14T14:48:15Z web            INFO GET /de/search 200 47ms cache=HIT
+L158 2026-10-14T14:49:20Z web            INFO GET /fr/search 200 77ms cache=HIT
+L159 2026-10-14T14:50:00Z metrics        5xx_rate=0.02% p95_latency_ms=116
+L160 2026-10-14T14:50:26Z web            INFO GET /ja/cart 200 64ms cache=HIT
+L161 2026-10-14T14:51:00Z healthcheck    INFO /healthz 200 3ms
+L162 2026-10-14T14:51:27Z web            INFO GET /en/account 200 93ms cache=HIT
+L163 2026-10-14T14:52:33Z web            INFO GET /fr/search 200 45ms cache=HIT
+L164 2026-10-14T14:53:41Z web            INFO GET /de/home 200 57ms cache=MISS
+L165 2026-10-14T14:54:00Z healthcheck    INFO /healthz 200 3ms
+L166 2026-10-14T14:54:03Z web            INFO GET /en/product/123 200 41ms cache=HIT
+L167 2026-10-14T14:54:51Z web            INFO GET /de/account 200 30ms cache=HIT
+L168 2026-10-14T14:55:54Z web            INFO GET /en/product/123 200 28ms cache=HIT
+L169 2026-10-14T14:56:18Z web            INFO GET /fr/search 200 39ms cache=HIT
+L170 2026-10-14T14:56:42Z web            INFO GET /fr/product/884 200 60ms cache=HIT
+L171 2026-10-14T14:57:00Z healthcheck    INFO /healthz 200 3ms
+L172 2026-10-14T14:57:18Z web            INFO GET /en/cart 200 57ms cache=HIT
+L173 2026-10-14T14:58:07Z web            INFO GET /en/product/884 200 37ms cache=HIT
+L174 2026-10-14T14:59:10Z web            INFO GET /en/home 200 53ms cache=MISS
+L175 2026-10-14T14:59:39Z web            INFO GET /en/account 200 66ms cache=HIT
+L176 2026-10-14T15:00:00Z healthcheck    INFO /healthz 200 3ms
+L177 2026-10-14T15:00:00Z metrics        5xx_rate=0.02% p95_latency_ms=122
+L178 2026-10-14T15:00:07Z web            INFO GET /en/home 200 90ms cache=HIT
+L179 2026-10-14T15:01:10Z web            INFO GET /en/cart 200 90ms cache=HIT
+L180 2026-10-14T15:01:37Z web            WARN retrying connection pool=catalog attempt=2
+L181 2026-10-14T15:02:03Z web            INFO GET /en/product/884 200 87ms cache=HIT
+L182 2026-10-14T15:02:58Z web            INFO GET /en/home 200 88ms cache=MISS
+L183 2026-10-14T15:03:00Z healthcheck    INFO /healthz 200 3ms
+L184 2026-10-14T15:03:47Z web            INFO GET /en/search 200 85ms cache=HIT
+L185 2026-10-14T15:04:31Z web            INFO GET /en/cart 200 37ms cache=HIT
+L186 2026-10-14T15:05:00Z web            INFO GET /fr/product/123 200 74ms cache=HIT
+L187 2026-10-14T15:06:00Z healthcheck    INFO /healthz 200 3ms
+L188 2026-10-14T15:06:00Z web            INFO GET /de/home 200 74ms cache=HIT
+L189 2026-10-14T15:06:51Z web            INFO GET /en/cart 200 28ms cache=HIT
+L190 2026-10-14T15:07:54Z web            INFO GET /en/product/123 200 46ms cache=HIT
+L191 2026-10-14T15:08:38Z web            INFO GET /en/product/123 200 28ms cache=HIT
+L192 2026-10-14T15:09:00Z healthcheck    INFO /healthz 200 3ms
+L193 2026-10-14T15:09:19Z web            INFO GET /fr/home 200 53ms cache=HIT
+L194 2026-10-14T15:10:00Z metrics        5xx_rate=0.02% p95_latency_ms=118
+L195 2026-10-14T15:10:26Z web            INFO GET /en/product/123 200 36ms cache=HIT
+L196 2026-10-14T15:11:23Z web            INFO GET /en/product/884 200 63ms cache=HIT
+L197 2026-10-14T15:12:00Z healthcheck    INFO /healthz 200 3ms
+L198 2026-10-14T15:12:00Z web            INFO GET /en/account 200 64ms cache=HIT
+L199 2026-10-14T15:12:29Z web            INFO GET /en/product/123 200 83ms cache=HIT
+L200 2026-10-14T15:12:40Z web            WARN upstream timeout service=recs-service path=/api/recs count=1
+L201 2026-10-14T15:13:01Z web            INFO GET /fr/product/884 200 31ms cache=HIT
+L202 2026-10-14T15:14:01Z web            INFO GET /en/search 200 54ms cache=HIT
+L203 2026-10-14T15:14:24Z web            INFO GET /ja/product/884 200 85ms cache=HIT
+L204 2026-10-14T15:14:52Z web            INFO GET /de/product/123 200 90ms cache=MISS
+L205 2026-10-14T15:15:00Z healthcheck    INFO /healthz 200 3ms
+L206 2026-10-14T15:15:47Z web            INFO GET /en/product/884 200 81ms cache=HIT
+L207 2026-10-14T15:16:26Z web            INFO GET /en/account 200 61ms cache=HIT
+L208 2026-10-14T15:17:01Z web            INFO GET /en/search 200 78ms cache=HIT
+L209 2026-10-14T15:18:00Z healthcheck    INFO /healthz 200 3ms
+L210 2026-10-14T15:18:02Z web            INFO GET /en/cart 200 92ms cache=HIT
+L211 2026-10-14T15:18:53Z web            INFO GET /de/product/884 200 70ms cache=HIT
+L212 2026-10-14T15:19:41Z web            INFO GET /en/search 200 52ms cache=HIT
+L213 2026-10-14T15:20:00Z metrics        5xx_rate=0.02% p95_latency_ms=115
+L214 2026-10-14T15:20:12Z web            INFO GET /en/home 200 68ms cache=HIT
+L215 2026-10-14T15:20:31Z web            WARN i18n missing key=footer.legacy_promo locale=en-US fallback=none sampled=1/60s
+L216 2026-10-14T15:20:48Z web            INFO GET /fr/cart 200 30ms cache=HIT
+L217 2026-10-14T15:21:00Z healthcheck    INFO /healthz 200 3ms
+L218 2026-10-14T15:21:34Z web            INFO GET /en/account 200 95ms cache=HIT
+L219 2026-10-14T15:22:11Z web            INFO GET /en/home 200 91ms cache=HIT
+L220 2026-10-14T15:22:54Z web            INFO GET /en/search 200 95ms cache=HIT
+L221 2026-10-14T15:23:27Z web            INFO GET /en/cart 200 77ms cache=HIT
+L222 2026-10-14T15:24:00Z healthcheck    INFO /healthz 200 3ms
+L223 2026-10-14T15:24:15Z web            INFO GET /en/product/123 200 30ms cache=HIT
+L224 2026-10-14T15:25:02Z web            INFO GET /fr/product/884 200 90ms cache=MISS
+L225 2026-10-14T15:25:47Z web            INFO GET /ja/search 200 87ms cache=HIT
+L226 2026-10-14T15:26:22Z web            INFO GET /fr/cart 200 47ms cache=HIT
+L227 2026-10-14T15:27:00Z healthcheck    INFO /healthz 200 3ms
+L228 2026-10-14T15:27:25Z web            INFO GET /en/account 200 86ms cache=MISS
+L229 2026-10-14T15:28:34Z web            INFO GET /en/cart 200 57ms cache=HIT
+L230 2026-10-14T15:28:56Z web            INFO GET /de/product/123 200 44ms cache=HIT
+L231 2026-10-14T15:29:04Z web            WARN retrying connection pool=catalog attempt=2
+L232 2026-10-14T15:29:49Z web            INFO GET /de/account 200 42ms cache=MISS
+L233 2026-10-14T15:30:00Z healthcheck    INFO /healthz 200 3ms
+L234 2026-10-14T15:30:00Z metrics        5xx_rate=0.02% p95_latency_ms=118
+L235 2026-10-14T15:30:28Z web            INFO GET /de/search 200 52ms cache=HIT
+L236 2026-10-14T15:31:02Z web            INFO GET /fr/home 200 29ms cache=HIT
+L237 2026-10-14T15:31:51Z web            INFO GET /en/product/123 200 59ms cache=HIT
+L238 2026-10-14T15:32:26Z web            INFO GET /de/home 200 80ms cache=HIT
+L239 2026-10-14T15:33:00Z healthcheck    INFO /healthz 200 3ms
+L240 2026-10-14T15:33:05Z web            INFO GET /en/cart 200 91ms cache=HIT
+L241 2026-10-14T15:33:33Z web            WARN slow response path=/api/search ms=744
+L242 2026-10-14T15:34:06Z web            INFO GET /en/product/123 200 57ms cache=HIT
+L243 2026-10-14T15:34:49Z web            INFO GET /en/home 200 71ms cache=HIT
+L244 2026-10-14T15:35:32Z web            INFO GET /de/cart 200 28ms cache=HIT
+L245 2026-10-14T15:36:00Z healthcheck    INFO /healthz 200 3ms
+L246 2026-10-14T15:36:39Z web            INFO GET /fr/home 200 54ms cache=HIT
+L247 2026-10-14T15:37:11Z web            INFO GET /en/cart 200 57ms cache=HIT
+L248 2026-10-14T15:37:47Z web            INFO GET /fr/product/123 200 41ms cache=HIT
+L249 2026-10-14T15:38:38Z web            INFO GET /de/cart 200 90ms cache=HIT
+L250 2026-10-14T15:39:00Z healthcheck    INFO /healthz 200 3ms
+L251 2026-10-14T15:39:40Z web            INFO GET /en/search 200 46ms cache=HIT
+L252 2026-10-14T15:40:00Z metrics        5xx_rate=0.02% p95_latency_ms=124
+L253 2026-10-14T15:40:03Z web            INFO GET /en/search 200 46ms cache=HIT
+L254 2026-10-14T15:41:08Z web            INFO GET /en/product/884 200 85ms cache=HIT
+L255 2026-10-14T15:41:10Z web            WARN i18n missing key=nav.tooltip.cart locale=de-DE fallback=en-US sampled=1/60s
+L256 2026-10-14T15:41:48Z web            INFO GET /fr/home 200 49ms cache=HIT
+L257 2026-10-14T15:42:00Z healthcheck    INFO /healthz 200 3ms
+L258 2026-10-14T15:42:19Z web            INFO GET /de/search 200 87ms cache=MISS
+L259 2026-10-14T15:43:21Z web            INFO GET /fr/product/123 200 70ms cache=HIT
+L260 2026-10-14T15:43:47Z web            INFO GET /en/product/123 200 38ms cache=HIT
+L261 2026-10-14T15:44:14Z web            INFO GET /de/cart 200 76ms cache=HIT
+L262 2026-10-14T15:44:53Z web            INFO GET /fr/product/884 200 39ms cache=MISS
+L263 2026-10-14T15:45:00Z healthcheck    INFO /healthz 200 3ms
+L264 2026-10-14T15:45:43Z web            INFO GET /en/search 200 85ms cache=HIT
+L265 2026-10-14T15:46:26Z web            INFO GET /fr/product/884 200 31ms cache=HIT
+L266 2026-10-14T15:47:01Z web            INFO GET /fr/product/884 200 33ms cache=HIT
+L267 2026-10-14T15:47:50Z web            INFO GET /en/home 200 60ms cache=HIT
+L268 2026-10-14T15:48:00Z healthcheck    INFO /healthz 200 3ms
+L269 2026-10-14T15:48:14Z web            INFO GET /fr/product/123 200 74ms cache=HIT
+L270 2026-10-14T15:49:13Z web            INFO GET /en/account 200 68ms cache=HIT
+L271 2026-10-14T15:49:52Z web            INFO GET /en/search 200 36ms cache=MISS
+L272 2026-10-14T15:50:00Z metrics        5xx_rate=0.02% p95_latency_ms=114
+L273 2026-10-14T15:50:26Z web            INFO GET /en/account 200 87ms cache=HIT
+L274 2026-10-14T15:51:00Z healthcheck    INFO /healthz 200 3ms
+L275 2026-10-14T15:51:10Z web            INFO GET /fr/product/884 200 91ms cache=HIT
+L276 2026-10-14T15:52:01Z web            INFO GET /en/account 200 66ms cache=HIT
+L277 2026-10-14T15:53:10Z web            INFO GET /en/cart 200 69ms cache=HIT
+L278 2026-10-14T15:53:59Z web            INFO GET /en/search 200 38ms cache=HIT
+L279 2026-10-14T15:54:00Z healthcheck    INFO /healthz 200 3ms
+L280 2026-10-14T15:54:44Z web            INFO GET /fr/cart 200 80ms cache=MISS
+L281 2026-10-14T15:55:02Z web            WARN i18n missing key=footer.legacy_promo locale=en-US fallback=none sampled=1/60s
+L282 2026-10-14T15:55:06Z web            INFO GET /en/search 200 69ms cache=HIT
+L283 2026-10-14T15:55:53Z web            INFO GET /fr/home 200 61ms cache=HIT
+L284 2026-10-14T15:56:26Z web            INFO GET /en/product/884 200 85ms cache=HIT
+L285 2026-10-14T15:56:54Z web            INFO GET /en/search 200 58ms cache=HIT
+L286 2026-10-14T15:57:00Z healthcheck    INFO /healthz 200 3ms
+L287 2026-10-14T15:58:03Z web            INFO GET /de/home 200 65ms cache=HIT
+L288 2026-10-14T15:58:59Z web            INFO GET /en/product/123 200 61ms cache=HIT
+L289 2026-10-14T15:59:34Z web            INFO GET /en/cart 200 47ms cache=HIT
+L290 2026-10-14T16:00:00Z healthcheck    INFO /healthz 200 3ms
+L291 2026-10-14T16:00:00Z metrics        5xx_rate=0.02% p95_latency_ms=121
+L292 2026-10-14T16:00:31Z web            INFO GET /en/home 200 78ms cache=HIT
+L293 2026-10-14T16:01:06Z web            INFO GET /de/cart 200 40ms cache=HIT
+L294 2026-10-14T16:01:28Z web            INFO GET /en/product/884 200 57ms cache=HIT
+L295 2026-10-14T16:02:11Z web            INFO GET /en/product/123 200 57ms cache=HIT
+L296 2026-10-14T16:02:43Z web            INFO GET /de/search 200 52ms cache=HIT
+L297 2026-10-14T16:03:00Z healthcheck    INFO /healthz 200 3ms
+L298 2026-10-14T16:03:26Z web            INFO GET /de/cart 200 85ms cache=HIT
+L299 2026-10-14T16:04:35Z web            INFO GET /fr/home 200 41ms cache=HIT
+L300 2026-10-14T16:05:40Z web            INFO GET /de/cart 200 32ms cache=HIT
+L301 2026-10-14T16:06:00Z healthcheck    INFO /healthz 200 3ms
+L302 2026-10-14T16:06:09Z web            INFO GET /en/product/123 200 32ms cache=HIT
+L303 2026-10-14T16:07:10Z web            INFO GET /ja/home 200 69ms cache=HIT
+L304 2026-10-14T16:07:53Z web            INFO GET /en/product/123 200 37ms cache=HIT
+L305 2026-10-14T16:09:00Z healthcheck    INFO /healthz 200 3ms
+L306 2026-10-14T16:09:03Z web            INFO GET /en/product/884 200 36ms cache=HIT
+L307 2026-10-14T16:10:00Z metrics        5xx_rate=0.02% p95_latency_ms=122
+L308 2026-10-14T16:10:13Z web            INFO GET /en/search 200 47ms cache=HIT
+L309 2026-10-14T16:10:38Z web            INFO GET /de/product/884 200 62ms cache=HIT
+L310 2026-10-14T16:11:16Z web            INFO GET /de/product/884 200 34ms cache=HIT
+L311 2026-10-14T16:12:00Z healthcheck    INFO /healthz 200 3ms
+L312 2026-10-14T16:12:12Z web            INFO GET /fr/product/884 200 81ms cache=MISS
+L313 2026-10-14T16:13:21Z web            INFO GET /ja/product/123 200 53ms cache=HIT
+L314 2026-10-14T16:14:06Z web            INFO GET /en/home 200 83ms cache=HIT
+L315 2026-10-14T16:14:53Z web            INFO GET /en/home 200 79ms cache=HIT
+L316 2026-10-14T16:15:00Z healthcheck    INFO /healthz 200 3ms
+L317 2026-10-14T16:15:36Z web            INFO GET /en/cart 200 44ms cache=MISS
+L318 2026-10-14T16:15:47Z web            WARN i18n missing key=footer.legacy_promo locale=en-US fallback=none sampled=1/60s
+L319 2026-10-14T16:16:31Z web            INFO GET /en/product/884 200 39ms cache=HIT
+L320 2026-10-14T16:17:14Z web            INFO GET /fr/cart 200 46ms cache=HIT
+L321 2026-10-14T16:17:44Z web            INFO GET /de/home 200 41ms cache=HIT
+L322 2026-10-14T16:18:00Z healthcheck    INFO /healthz 200 3ms
+L323 2026-10-14T16:18:52Z web            INFO GET /fr/cart 200 66ms cache=HIT
+L324 2026-10-14T16:19:14Z web            INFO GET /ja/product/884 200 68ms cache=MISS
+L325 2026-10-14T16:20:00Z metrics        5xx_rate=0.02% p95_latency_ms=114
+L326 2026-10-14T16:20:14Z web            INFO GET /en/account 200 48ms cache=HIT
+L327 2026-10-14T16:20:35Z web            WARN i18n missing key=header.title locale=fr-FR fallback=en-US sampled=1/60s
+L328 2026-10-14T16:20:48Z web            INFO GET /de/search 200 53ms cache=HIT
+L329 2026-10-14T16:21:00Z healthcheck    INFO /healthz 200 3ms
+L330 2026-10-14T16:21:19Z web            INFO GET /de/home 200 79ms cache=HIT
+L331 2026-10-14T16:21:49Z web            INFO GET /en/home 200 47ms cache=HIT
+L332 2026-10-14T16:22:55Z web            INFO GET /fr/cart 200 33ms cache=HIT
+L333 2026-10-14T16:23:38Z web            WARN retrying connection pool=catalog attempt=2
+L334 2026-10-14T16:24:00Z healthcheck    INFO /healthz 200 3ms
+L335 2026-10-14T16:24:03Z web            INFO GET /de/account 200 69ms cache=HIT
+L336 2026-10-14T16:25:01Z web            INFO GET /en/account 200 67ms cache=HIT
+L337 2026-10-14T16:25:40Z web            INFO GET /de/product/884 200 77ms cache=HIT
+L338 2026-10-14T16:25:51Z web            WARN slow response path=/api/search ms=709
+L339 2026-10-14T16:26:28Z web            INFO GET /de/cart 200 30ms cache=MISS
+L340 2026-10-14T16:27:00Z healthcheck    INFO /healthz 200 3ms
+L341 2026-10-14T16:27:19Z web            INFO GET /en/product/884 200 86ms cache=HIT
+L342 2026-10-14T16:28:09Z web            INFO GET /en/home 200 44ms cache=HIT
+L343 2026-10-14T16:28:52Z web            INFO GET /en/product/884 200 92ms cache=HIT
+L344 2026-10-14T16:29:14Z web            INFO GET /en/cart 200 38ms cache=HIT
+L345 2026-10-14T16:29:54Z web            INFO GET /fr/search 200 38ms cache=MISS
+L346 2026-10-14T16:30:00Z healthcheck    INFO /healthz 200 3ms
+L347 2026-10-14T16:30:00Z metrics        5xx_rate=0.02% p95_latency_ms=120
+L348 2026-10-14T16:30:46Z web            INFO GET /fr/account 200 45ms cache=MISS
+L349 2026-10-14T16:31:10Z web            INFO GET /ja/account 200 42ms cache=HIT
+L350 2026-10-14T16:32:01Z web            INFO GET /en/cart 200 56ms cache=MISS
+L351 2026-10-14T16:32:43Z web            INFO GET /de/product/123 200 48ms cache=HIT
+L352 2026-10-14T16:33:00Z healthcheck    INFO /healthz 200 3ms
+L353 2026-10-14T16:33:42Z web            INFO GET /en/product/884 200 46ms cache=HIT
+L354 2026-10-14T16:33:50Z web            WARN i18n missing key=nav.tooltip.cart locale=ja-JP fallback=en-US sampled=1/60s
+L355 2026-10-14T16:34:32Z web            INFO GET /en/product/123 200 92ms cache=HIT
+L356 2026-10-14T16:35:15Z web            INFO GET /en/cart 200 79ms cache=HIT
+L357 2026-10-14T16:35:52Z web            INFO GET /de/product/884 200 49ms cache=HIT
+L358 2026-10-14T16:36:00Z healthcheck    INFO /healthz 200 3ms
+L359 2026-10-14T16:36:28Z web            INFO GET /en/search 200 34ms cache=HIT
+L360 2026-10-14T16:37:11Z web            INFO GET /ja/product/884 200 94ms cache=HIT
+L361 2026-10-14T16:37:37Z web            INFO GET /en/search 200 78ms cache=HIT
+L362 2026-10-14T16:38:20Z web            INFO GET /en/product/123 200 46ms cache=HIT
+L363 2026-10-14T16:39:00Z healthcheck    INFO /healthz 200 3ms
+L364 2026-10-14T16:39:28Z web            INFO GET /en/cart 200 50ms cache=HIT
+L365 2026-10-14T16:39:48Z web            WARN deprecated header X-Legacy-Client seen client=partner-feed
+L366 2026-10-14T16:39:51Z web            INFO GET /en/search 200 60ms cache=HIT
+L367 2026-10-14T16:40:00Z metrics        5xx_rate=0.02% p95_latency_ms=120
+L368 2026-10-14T16:40:12Z web            WARN i18n missing key=footer.legacy_promo locale=en-US fallback=none sampled=1/60s
+L369 2026-10-14T16:40:48Z web            INFO GET /ja/product/123 200 28ms cache=HIT
+L370 2026-10-14T16:41:22Z web            INFO GET /en/search 200 83ms cache=HIT
+L371 2026-10-14T16:42:00Z healthcheck    INFO /healthz 200 3ms
+L372 2026-10-14T16:42:05Z web            INFO GET /fr/cart 200 90ms cache=HIT
+L373 2026-10-14T16:43:06Z web            INFO GET /en/home 200 28ms cache=HIT
+L374 2026-10-14T16:43:45Z web            INFO GET /en/product/123 200 56ms cache=HIT
+L375 2026-10-14T16:44:20Z web            WARN deprecated header X-Legacy-Client seen client=partner-feed
+L376 2026-10-14T16:44:24Z web            INFO GET /de/cart 200 74ms cache=HIT
+L377 2026-10-14T16:45:00Z healthcheck    INFO /healthz 200 3ms
+L378 2026-10-14T16:45:14Z web            INFO GET /en/home 200 59ms cache=HIT
+L379 2026-10-14T16:46:02Z web            INFO GET /en/account 200 46ms cache=HIT
+L380 2026-10-14T16:47:12Z web            INFO GET /en/product/123 200 29ms cache=MISS
+L381 2026-10-14T16:47:30Z support-ticket TKT-9132 "German storefront shows the page title and tooltips in English"
+L382 2026-10-14T16:48:00Z healthcheck    INFO /healthz 200 3ms
+L383 2026-10-14T16:48:07Z web            INFO GET /fr/search 200 84ms cache=HIT
+L384 2026-10-14T16:49:00Z web            INFO GET /fr/cart 200 49ms cache=HIT
+L385 2026-10-14T16:49:05Z support-ticket TKT-9135 "French cart page tooltip is in English"
+L386 2026-10-14T16:49:22Z web            INFO GET /en/home 200 79ms cache=HIT
+L387 2026-10-14T16:49:52Z web            INFO GET /en/home 200 29ms cache=HIT
+L388 2026-10-14T16:50:00Z metrics        5xx_rate=0.02% p95_latency_ms=121
+L389 2026-10-14T16:50:54Z web            INFO GET /ja/cart 200 80ms cache=HIT
+L390 2026-10-14T16:51:00Z healthcheck    INFO /healthz 200 3ms

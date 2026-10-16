@@ -1,0 +1,70 @@
+{
+  "id": "translation_fallback_01",
+  "true_cause": "Release 2026.10.14.2 regenerated the static locale files, and keys went missing for de-DE, fr-FR and ja-JP. The app silently falls back to English for any missing key, so nothing errors. The missing-key warnings start right after the release and not before.",
+  "must_cite_any": [
+    "L068",
+    "L072",
+    "L074",
+    "L255",
+    "L327",
+    "L354"
+  ],
+  "must_name_as_cause": [
+    "2026.10.14.2"
+  ],
+  "release_words": [
+    "release",
+    "deploy"
+  ],
+  "decoys": [
+    {
+      "id": "cdn_ttl",
+      "why_tempting": "The customer sees wrong content shortly after a CDN cache TTL change, which looks like stale cache.",
+      "why_wrong": "The cache was invalidated at L064 and later requests show cache=MISS serving the new files. The new files themselves are missing the keys.",
+      "lines": [
+        "L051"
+      ],
+      "keywords": [
+        "cdn",
+        "cache ttl",
+        "ttl",
+        "stale cache",
+        "revalidation"
+      ]
+    },
+    {
+      "id": "recs_timeout",
+      "why_tempting": "It is the only line that says 'timeout' in the logs, so it reads like a failure.",
+      "why_wrong": "One timeout, on a recommendations call, unrelated to text on the page.",
+      "lines": [
+        "L200"
+      ],
+      "keywords": [
+        "recs-service",
+        "recommendations",
+        "timeout"
+      ]
+    }
+  ],
+  "detection_gap": "5xx rate and latency stayed flat, and the only signal was a sampled WARN about falling back to English. An alert on missing-key or fallback warnings, or a build check that fails when a locale is missing keys that English has, would have caught this before customers did.",
+  "detection_topics": [
+    "translat",
+    "locali",
+    "i18n",
+    "locale",
+    "fallback",
+    "falling back",
+    "falls back",
+    "fall back",
+    "missing key"
+  ],
+  "detection_actions": [
+    "test",
+    "check",
+    "alert",
+    "validation",
+    "validate",
+    "monitor",
+    "assert"
+  ]
+}

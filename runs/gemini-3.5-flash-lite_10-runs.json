@@ -1,0 +1,333 @@
+{
+  "summary": {
+    "incident": "translation_fallback_01",
+    "model": "gemini-3.5-flash-lite",
+    "runs": 10,
+    "passed": 0,
+    "failed": 10,
+    "prompt_tokens": 180000,
+    "output_tokens": 1529
+  },
+  "results": [
+    {
+      "run": 1,
+      "model": "gemini-3.5-flash-lite",
+      "prompt_tokens": 18000,
+      "output_tokens": 97,
+      "brief": {
+        "cause": "An upstream timeout from the recommendations service occurred during request handling.",
+        "evidence": [
+          "L200"
+        ],
+        "next_action": "Check the health and logs of the recommendations service (recs-service) to resolve the upstream timeout.",
+        "detection": "An alert monitoring upstream timeout warnings from dependent services (such as recs-service) would have caught this issue immediately."
+      },
+      "check": {
+        "passed": false,
+        "failures": [
+          {
+            "rule": "no_real_evidence",
+            "detail": "cites none of the lines that prove the cause (L068, L072, L074, L255, L327, L354)"
+          },
+          {
+            "rule": "wrong_cause",
+            "detail": "cause does not point at the release; it blames a decoy (recs_timeout)"
+          },
+          {
+            "rule": "no_detection",
+            "detail": "does not propose a test, alert or check about translations, locales or fallbacks"
+          }
+        ]
+      }
+    },
+    {
+      "run": 2,
+      "model": "gemini-3.5-flash-lite",
+      "prompt_tokens": 18000,
+      "output_tokens": 158,
+      "brief": {
+        "cause": "An upstream timeout from the recommendations service occurred, causing connection pool retries and localized UI missing translation fallbacks.",
+        "evidence": [
+          "L039",
+          "L071",
+          "L078",
+          "L200",
+          "L231",
+          "L333",
+          "L381",
+          "L385"
+        ],
+        "next_action": "Investigate the recs-service upstream dependency and verify localization bundle cache invalidation behavior.",
+        "detection": "An alert monitoring upstream timeout frequencies and missing i18n localization translation fallbacks would have caught this issue."
+      },
+      "check": {
+        "passed": false,
+        "failures": [
+          {
+            "rule": "no_real_evidence",
+            "detail": "cites none of the lines that prove the cause (L068, L072, L074, L255, L327, L354)"
+          },
+          {
+            "rule": "wrong_cause",
+            "detail": "cause does not point at the release; it blames a decoy (recs_timeout)"
+          }
+        ]
+      }
+    },
+    {
+      "run": 3,
+      "model": "gemini-3.5-flash-lite",
+      "prompt_tokens": 18000,
+      "output_tokens": 152,
+      "brief": {
+        "cause": "An upstream timeout in the recommendations service and missing localization translation keys following a release and cache invalidation caused fallback to English text and slow responses.",
+        "evidence": [
+          "L068",
+          "L071",
+          "L072",
+          "L200",
+          "L381",
+          "L385"
+        ],
+        "next_action": "Verify translation files and fix missing i18n keys for localization, and investigate the recommendations service timeout.",
+        "detection": "An automated localization validation test checking that all required i18n keys exist for active locales prior to release deployment."
+      },
+      "check": {
+        "passed": false,
+        "failures": [
+          {
+            "rule": "wrong_cause",
+            "detail": "it blames a decoy (recs_timeout)"
+          }
+        ]
+      }
+    },
+    {
+      "run": 4,
+      "model": "gemini-3.5-flash-lite",
+      "prompt_tokens": 18000,
+      "output_tokens": 124,
+      "brief": {
+        "cause": "An upstream timeout from the recommendations service occurred, and missing i18n localization keys caused localized content to fall back to English.",
+        "evidence": [
+          "L200",
+          "L381",
+          "L385"
+        ],
+        "next_action": "Investigate the recs-service performance and review the missing i18n translation keys in the localization bundles.",
+        "detection": "An alert on upstream dependency timeouts and missing i18n translation fallbacks exceeding a threshold."
+      },
+      "check": {
+        "passed": false,
+        "failures": [
+          {
+            "rule": "no_real_evidence",
+            "detail": "cites none of the lines that prove the cause (L068, L072, L074, L255, L327, L354)"
+          },
+          {
+            "rule": "wrong_cause",
+            "detail": "cause does not point at the release; it blames a decoy (recs_timeout)"
+          }
+        ]
+      }
+    },
+    {
+      "run": 5,
+      "model": "gemini-3.5-flash-lite",
+      "prompt_tokens": 18000,
+      "output_tokens": 239,
+      "brief": {
+        "cause": "An upstream timeout and slower responses from the recommendations and catalog services are causing intermittent connection retries and latency spikes. Additionally, missing localization keys are causing fallback behavior to English for certain storefronts.",
+        "evidence": [
+          "L039",
+          "L054",
+          "L068",
+          "L071",
+          "L072",
+          "L074",
+          "L180",
+          "L200",
+          "L231",
+          "L241",
+          "L333",
+          "L338",
+          "L381",
+          "L385"
+        ],
+        "next_action": "Investigate health and performance of the catalog and recommendations downstream services, and verify the recently synced localization files for missing translation keys.",
+        "detection": "An automated alert on increased upstream timeout warnings, connection pool retries, or a high frequency of missing i18n translation fallbacks would have caught this."
+      },
+      "check": {
+        "passed": false,
+        "failures": [
+          {
+            "rule": "wrong_cause",
+            "detail": "cause does not point at the release; it blames a decoy (recs_timeout)"
+          }
+        ]
+      }
+    },
+    {
+      "run": 6,
+      "model": "gemini-3.5-flash-lite",
+      "prompt_tokens": 18000,
+      "output_tokens": 208,
+      "brief": {
+        "cause": "An upstream timeout or connection pool retry issue occurred with the recommendation service and catalog pool, while localized UI strings (such as page titles and tooltips) were missing or falling back to English after a deployment cache invalidation.",
+        "evidence": [
+          "L039",
+          "L068",
+          "L071",
+          "L072",
+          "L074",
+          "L180",
+          "L200",
+          "L231",
+          "L333",
+          "L381",
+          "L385"
+        ],
+        "next_action": "Verify translation files are fully synced and available at the origin server for all locales to resolve the fallback to English.",
+        "detection": "An automated localization integrity check or alert monitoring for missing i18n translation keys and fallback rates per locale."
+      },
+      "check": {
+        "passed": false,
+        "failures": [
+          {
+            "rule": "wrong_cause",
+            "detail": "it blames a decoy (recs_timeout)"
+          }
+        ]
+      }
+    },
+    {
+      "run": 7,
+      "model": "gemini-3.5-flash-lite",
+      "prompt_tokens": 18000,
+      "output_tokens": 158,
+      "brief": {
+        "cause": "An upstream timeout or intermittent connection issue with the recommendation and catalog services caused connection pool retries and slow responses.",
+        "evidence": [
+          "L039",
+          "L054",
+          "L180",
+          "L200",
+          "L231",
+          "L241",
+          "L338"
+        ],
+        "next_action": "Check the health, resource utilization, and connection limits of the catalog and recommendations microservices to resolve downstream latency.",
+        "detection": "An alert configured for elevated upstream timeout warnings or an increase in dependency latency p95 would have caught this before customers reported issues."
+      },
+      "check": {
+        "passed": false,
+        "failures": [
+          {
+            "rule": "no_real_evidence",
+            "detail": "cites none of the lines that prove the cause (L068, L072, L074, L255, L327, L354)"
+          },
+          {
+            "rule": "wrong_cause",
+            "detail": "cause does not point at the release; it blames a decoy (recs_timeout)"
+          },
+          {
+            "rule": "no_detection",
+            "detail": "does not propose a test, alert or check about translations, locales or fallbacks"
+          }
+        ]
+      }
+    },
+    {
+      "run": 8,
+      "model": "gemini-3.5-flash-lite",
+      "prompt_tokens": 18000,
+      "output_tokens": 140,
+      "brief": {
+        "cause": "An upstream timeout from the recs-service and intermittent catalog connection pool retries are causing backend warnings, while recent cache invalidations during deployment are leading to slow origin revalidation for localization files.",
+        "evidence": [
+          "L039",
+          "L180",
+          "L200",
+          "L231"
+        ],
+        "next_action": "Investigate the health and performance of the recs-service and catalog connection pool.",
+        "detection": "An alert on upstream timeout warning logs and increased connection pool retries would have caught this issue proactively."
+      },
+      "check": {
+        "passed": false,
+        "failures": [
+          {
+            "rule": "no_real_evidence",
+            "detail": "cites none of the lines that prove the cause (L068, L072, L074, L255, L327, L354)"
+          },
+          {
+            "rule": "wrong_cause",
+            "detail": "it blames a decoy (cdn_ttl, recs_timeout)"
+          },
+          {
+            "rule": "no_detection",
+            "detail": "does not propose a test, alert or check about translations, locales or fallbacks"
+          }
+        ]
+      }
+    },
+    {
+      "run": 9,
+      "model": "gemini-3.5-flash-lite",
+      "prompt_tokens": 18000,
+      "output_tokens": 133,
+      "brief": {
+        "cause": "An upstream timeout in the recommendations service caused slow responses, while a recent deployment introduced missing i18n translation keys causing localized strings to fall back to English.",
+        "evidence": [
+          "L200",
+          "L381",
+          "L385"
+        ],
+        "next_action": "Investigate the recs-service upstream timeout and verify the i18n translation files for missing keys.",
+        "detection": "An alert on upstream timeout rates for dependencies and a localization test to catch missing i18n keys before deployment."
+      },
+      "check": {
+        "passed": false,
+        "failures": [
+          {
+            "rule": "no_real_evidence",
+            "detail": "cites none of the lines that prove the cause (L068, L072, L074, L255, L327, L354)"
+          },
+          {
+            "rule": "wrong_cause",
+            "detail": "it blames a decoy (recs_timeout)"
+          }
+        ]
+      }
+    },
+    {
+      "run": 10,
+      "model": "gemini-3.5-flash-lite",
+      "prompt_tokens": 18000,
+      "output_tokens": 120,
+      "brief": {
+        "cause": "An upstream timeout from the recommendations service occurred, and missing localization keys caused localized UI elements to fall back to English.",
+        "evidence": [
+          "L200",
+          "L381",
+          "L385"
+        ],
+        "next_action": "Investigate the recs-service for timeout issues and check localization translation files for missing keys.",
+        "detection": "An alert on upstream service timeout warnings and an automated translation coverage check for missing locale keys would have caught this."
+      },
+      "check": {
+        "passed": false,
+        "failures": [
+          {
+            "rule": "no_real_evidence",
+            "detail": "cites none of the lines that prove the cause (L068, L072, L074, L255, L327, L354)"
+          },
+          {
+            "rule": "wrong_cause",
+            "detail": "cause does not point at the release; it blames a decoy (recs_timeout)"
+          }
+        ]
+      }
+    }
+  ]
+}
